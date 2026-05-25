@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Huella de CO₂ — Tierra Viva</title>
+  <meta name="description" content="Calcula tu huella de carbono personal en minutos. Descubre cuánto CO₂ generas y cómo reducir tu impacto ambiental." />
+  <link rel="stylesheet" href="calculator.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">🌿</div>
+      <span class="nav-logo-text">Tierra Viva</span>
+    </a>
+    <a href="index.html" class="btn-back">← Volver al inicio</a>
+  </nav>
+
+  <!-- Hero de calculadora -->
+  <header class="calc-hero">
+    <div class="calc-hero-badge">🧮 Herramienta interactiva</div>
+    <h1>Calcula tu huella de <span>CO₂</span></h1>
+    <p>
+      Responde 6 preguntas rápidas sobre tus hábitos cotidianos y obtén
+      una estimación personalizada de tus emisiones de dióxido de carbono.
+    </p>
+  </header>
+
+  <!-- Barra de progreso / Pasos -->
+  <div class="calc-progress-section">
+    <div class="progress-steps" id="progressSteps">
+
+      <div class="step-item active" data-step="0">
+        <div class="step-circle">1</div>
+        <span class="step-label">Transporte</span>
+      </div>
+
+      <div class="step-item" data-step="1">
+        <div class="step-circle">2</div>
+        <span class="step-label">Electrónica</span>
+      </div>
+
+      <div class="step-item" data-step="2">
+        <div class="step-circle">3</div>
+        <span class="step-label">Alimentación</span>
+      </div>
+
+      <div class="step-item" data-step="3">
+        <div class="step-circle">4</div>
+        <span class="step-label">Consumo</span>
+      </div>
+
+      <div class="step-item" data-step="4">
+        <div class="step-circle">5</div>
+        <span class="step-label">Reciclaje</span>
+      </div>
+
+      <div class="step-item" data-step="5">
+        <div class="step-circle">6</div>
+        <span class="step-label">Energía</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Area principal -->
+  <main class="calc-main">
+    <div class="calc-container">
+      <div id="calcContainer"></div>
+
+      <!-- Sección de resultados (oculta al inicio) -->
+      <div id="resultados">
+
+        <!-- Cabecera del resultado -->
+        <div class="result-header">
+          <span class="result-emoji" id="resEmoji">🌍</span>
+          <h2 id="resKgDia">Calculando...</h2>
+          <p style="color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 12px; position: relative;" id="resMensaje"></p>
+          <span class="result-nivel" id="resNivel">—</span>
+        </div>
+
+        <!-- Stats: día / mes / año -->
+        <div class="result-stats">
+          <div class="stat-box">
+            <span class="stat-period">Por día</span>
+            <span class="stat-value" id="statDia">—</span>
+            <span class="stat-unit">kg CO₂</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-period">Por mes</span>
+            <span class="stat-value" id="statMes">—</span>
+            <span class="stat-unit">kg CO₂</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-period">Por año</span>
+            <span class="stat-value" id="statAnio">—</span>
+            <span class="stat-unit">kg CO₂</span>
+          </div>
+        </div>
+
+        <!-- Desglose por categoría con barras -->
+        <div class="result-breakdown">
+          <h3 class="breakdown-title">
+            📊 Emisiones por categoría
+          </h3>
+          <div id="barsContainer">
+            <!-- Las barras se generan god -->
+          </div>
+        </div>
+
+        <!-- Fuente principal + consejo -->
+        <div class="result-insight">
+          <div class="insight-box main-source">
+            <div class="insight-tag">🔺 Principal fuente</div>
+            <h3 id="mainSourceName">—</h3>
+            <p id="mainSourceDetail">—</p>
+          </div>
+
+          <div class="insight-box advice">
+            <div class="insight-tag">💡 Consejo personalizado</div>
+            <h3 id="adviceTitle">—</h3>
+            <p id="adviceText">—</p>
+          </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="result-actions">
+          <button class="btn-primary" onclick="reiniciarCalculadora()">
+            🔄 Volver a calcular
+          </button>
+          <a href="index.html#consejos" class="btn-outline">
+            🌱 Ver todos los consejos
+          </a>
+        </div>
+
+      </div>
+      <!-- resultados -->
+
+    </div>
+  </main>
+
+  <!-- Footer minimalista :v -->
+  <footer class="calc-footer">
+    <p>
+      Los valores son estimaciones basadas en promedios de consumo.
+      Para mediciones precisas consulta especialistas en sostenibilidad.
+      &nbsp;|&nbsp;
+      <a href="index.html">← Volver a Tierra Viva</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="calculator.js"></script>
+
+</body>
+</html>
